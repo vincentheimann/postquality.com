@@ -1,0 +1,16 @@
+title: Post Quality Manager
+description: Score every post, see what to fix next and keep your back-catalog sharp. AI content reviews, stored and tracked in WP Admin.
+url: https://postquality.com
+author: Vincent Heimann
+email: hello@postquality.com
+theme: minima
+show_excerpts: false
+header_pages:
+  - pricing.md
+  - docs.md
+  - support.md
+minima:
+  skin: classic
+  social_links: []
+exclude:
+  - README.md
