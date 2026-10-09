@@ -18,11 +18,11 @@ The free plugin is the trial: Review and Key Takeaways work on every post, for e
 
 ## Pro, per year
 
-| Sites | USD | EUR |
-|---|---|---|
-| 1 site | 49 | 49 |
-| 5 sites | 99 | 99 |
-| Unlimited sites | 199 | 199 |
+| Sites | USD | EUR | CHF |
+|---|---|---|---|
+| 1 site | 49 | 49 | 49 |
+| 5 sites | 99 | 99 | 99 |
+| Unlimited sites | 199 | 199 | 199 |
 
 Billed yearly, renews at the price you bought at, cancel any time. **14-day money-back guarantee**, no questions asked. Prices cover the plugin only: you pay your own n8n hosting and AI provider separately.
 
