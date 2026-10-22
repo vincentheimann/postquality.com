@@ -14,7 +14,7 @@ The free plugin is the trial: Review and Key Takeaways work on every post, for e
 | Automated Reviews on a schedule | | yes |
 | Roles tab: what each role can do | | yes |
 | Updates | yes | yes |
-| Support | WordPress.org forum | email, within 2 business days |
+| Support | email, best effort | email, within 2 business days |
 
 ## Pro, per year
 

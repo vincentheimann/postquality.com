@@ -1,9 +1,7 @@
 ---
 layout: home
-title: Home
+title: Post Quality Manager
 ---
-
-# Post Quality Manager
 
 **Score every post, see what to fix next and keep your back-catalog sharp.** AI content reviews, stored and tracked in WP Admin.
 
@@ -13,11 +11,11 @@ Post Quality Manager scores every post on four universal pillars, **Structure, R
 
 ## How it works
 
-Your WordPress site sends a post to **your own n8n workflow**, the workflow asks the AI provider you chose, and the result comes back into WP Admin: a score, the issues found, suggested edits, key takeaways, sources, SEO and audit notes. You bring the n8n instance and the AI provider account; the plugin brings the dashboard, the workflow and the agents.
+Your WordPress site sends a post to **your own n8n workflow**, the workflow asks Anthropic's Claude models, and the result comes back into WP Admin: a score, the issues found, suggested edits, key takeaways, sources, SEO and audit notes. You bring the n8n instance and an Anthropic API key; the plugin brings the dashboard, the workflow and the agents.
 
 ## Get it
 
-- **Free:** Review and Key Takeaways for every post. The plugin will be listed in the WordPress.org plugin directory; until then, download the latest release from [GitHub](https://github.com/vincentheimann/post-quality-manager/releases).
+- **Free:** Review and Key Takeaways for every post. The plugin is not installable yet; [leave your email](mailto:hello@postquality.com?subject=Tell%20me%20when%20Post%20Quality%20Manager%20is%20available) and you will hear once, when you can install it.
 - **Pro:** the Rewrite, Sources, SEO and Audit agents, per-agent overrides, Automated Reviews and the Roles tab. See [pricing](/pricing/).
 
 Read the [documentation](/docs/) to set it up, or write to [hello@postquality.com](mailto:hello@postquality.com).
