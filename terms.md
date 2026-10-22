@@ -4,7 +4,7 @@ title: Terms of service
 permalink: /terms/
 ---
 
-_Vincent Heimann, acting as a private person. Last updated 2026-10-09. Published at https://postquality.com/terms; questions to hello@postquality.com._
+_Vincent Heimann, acting as a private person. Last updated 2026-10-22. Published at https://postquality.com/terms; questions to hello@postquality.com._
 
 ## 1. What you buy
 
@@ -18,7 +18,7 @@ A **Pro license** does not buy the code. It buys, for one year, for the number o
 
 ## 2. Seller and payment
 
-Licenses are sold through Freemius, Inc., the seller of record, which handles payment, invoices, taxes and refunds under its own terms (https://freemius.com/terms/). Prices are shown on https://postquality.com/pricing in USD and EUR; the price covers the plugin only. You pay your own n8n hosting and your own AI provider separately.
+Licenses are sold through Freemius, Inc., the seller of record, which handles payment, invoices, taxes and refunds under its own terms (https://freemius.com/terms/). Prices are shown on https://postquality.com/pricing in USD, EUR and CHF; the price covers the plugin only. You pay your own n8n hosting and your own AI provider separately.
 
 ## 3. Sites and renewal
 
