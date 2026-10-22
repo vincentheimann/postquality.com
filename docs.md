@@ -34,7 +34,7 @@ Post Quality Manager is not installable yet. [Leave your email](mailto:hello@pos
 
 ## FAQ
 
-**What does it cost me in AI calls?** You pay Anthropic per call, on your own API key. A review sends the post text plus your settings text once; the per-user monthly quota and the site-wide token limit in Settings cap what the plugin may spend. A worked example will be added here.
+**What does it cost me in AI calls?** You pay Anthropic per call, on your own API key, and your n8n hosting separately. A review sends the post text plus your settings text once. To cap what you spend, set a spend limit in your Anthropic account: the plugin's Monthly Quota only limits how many AI actions each Author runs (Editors and Administrators have no limit). A worked example will be added here.
 
 **Does my content leave my site?** Only to your own n8n instance and, through it, to Anthropic, on your instruction. See the [privacy policy](/privacy/).
 
