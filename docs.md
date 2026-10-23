@@ -51,9 +51,9 @@ Once it is installed and active, open **Post Quality → n8n Workflow** and clic
 - **Connect your n8n:** your n8n address and an n8n API key.
 - **Set up the workflow:** your Anthropic API key. The plugin checks it once with Anthropic and writes it into an n8n credential; your site never stores it.
 
-{% include screenshot.html src="setup" width="1280" height="708" phone="setup-phone" phone_width="800" phone_height="777" alt="Illustration of the setup guide, step 2 of 5: the n8n address and the n8n API key are connected, and a field asks for the Anthropic API key." caption="An illustration of the setup guide's three values. Fictional values." %}
+{% include screenshot.html src="setup" width="1440" height="713" phone="setup-phone" phone_width="800" phone_height="1386" alt="The Post Quality setup guide at step 2 of 5, Set up the workflow, its five steps listed beside it: Connect your n8n, Set up the workflow, Run your first review, Choose your Blog Profile, Set your Editorial Standards. The Anthropic API key field is empty." caption="The setup guide's second step: your Anthropic API key. The first asks for your n8n address and an n8n API key." %}
 
-The guide then creates the workflow and its credentials in n8n, publishes the workflow and tests the connection both ways. In its last step, **Run your first review**: pick a published post and click **Run Review**.
+The guide then creates the workflow and its credentials in n8n, publishes the workflow and tests the connection both ways. In its third step, **Run your first review**: pick a published post and click **Run Review**.
 
 The plugin keeps the n8n API key on your site to set up and update the workflow, so create one for this site alone, with an expiration date (in n8n: Settings → n8n API). Rather not? [Set up by hand](#set-up-by-hand).
 
@@ -79,6 +79,8 @@ The guide then runs your first review.
 - **Insert into Post** puts the suggested Takeaways or Sources into the post with one click, as a plain list or in a pattern you design in Appearance → Patterns.
 - **Automated Reviews** (Pro) scores posts on a schedule, by age and score.
 - **Roles** (Pro) sets what each WordPress role can do in the plugin.
+
+{% include screenshot.html src="review-list" width="1440" height="911" alt="Post Reviews in WP Admin: status filters All 26, Ready to ship 12, Needs revision 7, Major revision 3, Not analyzed 4; a table of posts with each one's score, its status as an icon, a label and a colour, and the date of its last review." caption="Post Reviews in WP Admin. Demo posts, fictional scores." %}
 
 ## Upgrade to Pro {#upgrade-to-pro}
 

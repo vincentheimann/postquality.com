@@ -926,7 +926,7 @@ main [id] { scroll-margin-top: 24px; }
   .menu { grid-area: 1 / 1 / 2 / 3; pointer-events: none; }
   .menu > summary, .menu-panel { pointer-events: auto; }
   .pillars { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .pillars .shot { width: 100%; max-width: 480px; margin-left: auto; margin-right: auto; }  /* the 880 px review image, stacked */
+  .pillars .shot { width: 100%; max-width: 480px; margin-left: auto; margin-right: auto; }  /* the 960 px review image, stacked */
   .steps { gap: var(--gap-lg); }
   .packs { gap: var(--gap-md); }
   .pack { padding: var(--card-padding); }
@@ -970,6 +970,7 @@ main [id] { scroll-margin-top: 24px; }
   .need-item p { font-size: var(--fs-body-card-mobile); }
   .steps { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 28px; }
   .how-shot { max-width: 480px; margin-top: 40px; }
+  .text-page .shot { max-width: 480px; margin-left: auto; margin-right: auto; }  /* the docs pictures: the 800 px phone crop at its home-page size */
   .flow { flex-direction: column; align-items: stretch; margin-top: 40px; padding: 16px; }
   .flow li { flex-direction: column; align-items: stretch; }
   .flow-node { text-align: center; }
