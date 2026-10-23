@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Terms of service
+description: "The terms for Post Quality Manager and its Pro license: what you buy, sites and renewal, refunds and when a license ends."
 permalink: /terms/
 ---
 

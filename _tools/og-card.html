@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  The sharing card (og:image), source of assets/og-card.png. Not part of the site: Jekyll skips folders starting
+  with "_". Rendered once at 1200 x 630 by headless Edge (README, "Sharing card"); GitHub Pages does no image
+  processing. Spec: DESIGN.md "Sharing card" in the plugin repository (story 86): the dark version, lockup B at a
+  96 px tile on the band, the tagline verbatim at 40 px in white, the domain muted, a 60 px safe margin, no
+  screenshot, no third-party mark. The icon is a copy of assets/icon.svg; the lockup text is the system sans, as on
+  the site (brief D2).
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sharing card</title>
+<style>
+  html, body { margin: 0; }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    position: relative;
+    background: #1b2a41; /* navy */
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .band { background: #33496b; padding: 60px; } /* the tile never sits on navy */
+  .lockup { display: flex; align-items: center; gap: 36px; font-size: 60px; line-height: 1; white-space: nowrap; } /* 0.375 T, 0.63 T */
+  .tile { display: block; width: 96px; height: 96px; flex: none; }
+  .name { font-weight: 600; color: #ffffff; }
+  .manager { font-weight: 400; color: #c3ccd9; }
+  .tagline { margin: 56px 60px 0; max-width: 1040px; font-size: 40px; line-height: 1.32; color: #ffffff; }
+  .tagline > span { display: block; text-wrap: balance; } /* one sentence per block, "back-catalog" kept whole */
+  .nowrap { white-space: nowrap; }
+  .domain { position: absolute; left: 60px; bottom: 60px; margin: 0; font-size: 28px; line-height: 1; color: #c3ccd9; }
+</style>
+</head>
+<body>
+  <div class="band">
+    <div class="lockup"><svg class="tile" viewBox="0 0 20 20" aria-hidden="true"><rect width="20" height="20" fill="#1b2a41"/><g transform="translate(3 3) scale(0.7)"><path fill="#ffffff" fill-rule="evenodd" d="M 13.1 9.55 A 6.3 6.3 0 1 1 0.5 9.55 A 6.3 6.3 0 1 1 13.1 9.55 Z M 10.85 9.55 A 4.05 4.05 0 1 0 2.75 9.55 A 4.05 4.05 0 1 0 10.85 9.55 Z"/><rect fill="#00a32a" x="0" y="-1.12" width="4.81" height="2.24" transform="translate(9.47 12.22) rotate(45)"/><rect fill="#00a32a" x="0" y="-1.12" width="7.78" height="2.24" transform="translate(12.87 15.62) rotate(-45)"/><circle fill="#00a32a" cx="9.47" cy="12.22" r="1.12"/><circle fill="#00a32a" cx="12.87" cy="15.62" r="1.12"/><circle fill="#00a32a" cx="18.38" cy="10.12" r="1.12"/></g></svg><span><span class="name">Post Quality</span> <span class="manager">Manager</span></span></div>
+  </div>
+  <p class="tagline"><span>Score every post, see what to fix next and keep your <span class="nowrap">back-catalog</span> sharp.</span> <span>AI content reviews, stored and tracked in WP Admin.</span></p>
+  <p class="domain">postquality.com</p>
+</body>
+</html>

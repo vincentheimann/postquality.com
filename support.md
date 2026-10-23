@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Support policy
+description: Where to ask about Post Quality Manager, Free or Pro, what to include in your email, and how to report a security problem.
 permalink: /support/
 ---
 

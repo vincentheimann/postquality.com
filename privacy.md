@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Privacy policy
+description: What the Post Quality Manager plugin sends and stores, what Freemius handles for Pro, and how this website treats your visit.
 permalink: /privacy/
 ---
 
