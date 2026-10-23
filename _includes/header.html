@@ -1,0 +1,35 @@
+{%- case page.url -%}
+  {%- when "/" -%}{%- assign hd_from = "the home page" -%}
+  {%- when "/pricing/" -%}{%- assign hd_from = "the pricing page" -%}
+  {%- when "/docs/" -%}{%- assign hd_from = "the documentation page" -%}
+  {%- when "/support/" -%}{%- assign hd_from = "the support page" -%}
+  {%- when "/privacy/" -%}{%- assign hd_from = "the privacy policy" -%}
+  {%- when "/terms/" -%}{%- assign hd_from = "the terms of service" -%}
+  {%- when "/refund/" -%}{%- assign hd_from = "the refund policy" -%}
+  {%- when "/404.html" -%}{%- assign hd_from = "the page-not-found page" -%}
+  {%- else -%}{%- assign hd_from = "the " | append: page.title -%}
+{%- endcase -%}
+<header class="site-header on-dark">
+  <div class="wrap header-row">
+    <a class="home-link" href="{{ "/" | relative_url }}" aria-label="Post Quality Manager, home">{% include lockup.html variant="b" %}</a>
+    <nav class="nav-main" aria-label="Main">
+      <ul role="list">
+        <li><a href="{{ "/pricing/" | relative_url }}">Pricing</a></li>
+        <li><a href="{{ "/docs/" | relative_url }}">Documentation</a></li>
+        <li><a href="{{ "/support/" | relative_url }}">Support</a></li>
+      </ul>
+      {% include site-action.html from=hd_from %}
+    </nav>
+    <details class="menu">
+      <summary>Menu<svg class="icon chevron" aria-hidden="true" focusable="false"><use href="#i-chevron"/></svg></summary>
+      <nav class="menu-panel" aria-label="Main">
+        <ul role="list">
+          <li><a href="{{ "/pricing/" | relative_url }}">Pricing</a></li>
+          <li><a href="{{ "/docs/" | relative_url }}">Documentation</a></li>
+          <li><a href="{{ "/support/" | relative_url }}">Support</a></li>
+        </ul>
+        {% include site-action.html from=hd_from %}
+      </nav>
+    </details>
+  </div>
+</header>

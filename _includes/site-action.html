@@ -1,0 +1,9 @@
+{%- comment -%}
+  The site-wide primary action, in the header row and last in the Menu. Before launch the interest email, after launch
+  Get the free plugin (to the What you need block). Parameter: from = the placement phrase for the email body.
+{%- endcomment -%}
+{%- if site.launched -%}
+<a class="btn btn-primary btn-small" href="{{ "/#need" | relative_url }}">Get the free plugin</a>
+{%- else -%}
+<a class="btn btn-primary btn-small" href="{% include interest-href.html from=include.from %}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Tell me when it's available<span class="vh"> (opens your email app)</span></a>
+{%- endif -%}

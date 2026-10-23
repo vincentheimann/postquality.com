@@ -1,43 +1,26 @@
-<footer class="site-footer h-card">
-  <data class="u-url" href="{{ "/" | relative_url }}"></data>
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title | escape }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">
-            {%- if site.author -%}
-              {{ site.author | escape }}
-            {%- else -%}
-              {{ site.title | escape }}
-            {%- endif -%}
-            </li>
-            {%- if site.email -%}
-            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {%- endif -%}
-        </ul>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        {% include lockup.html variant="d" tile=20 %}
+        <p class="footer-tagline">{{ site.description }}</p>
       </div>
-
-      <div class="footer-col footer-col-2">
-        {%- include social.html -%}
-        <nav aria-label="Policies">
-          <ul class="contact-list">
+      <div class="footer-contact">
+        <nav class="footer-nav" aria-label="Policies">
+          <ul role="list">
             <li><a href="{{ "/privacy/" | relative_url }}">Privacy</a></li>
             <li><a href="{{ "/terms/" | relative_url }}">Terms</a></li>
             <li><a href="{{ "/refund/" | relative_url }}">Refund</a></li>
             <li><a href="{{ "/support/" | relative_url }}">Support</a></li>
           </ul>
         </nav>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{- site.description | escape -}}</p>
+        <p class="footer-mail"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
       </div>
     </div>
-
+    <div class="footer-legal">
+      <p>No cookies, no analytics. Hosted on GitHub Pages.</p>
+      <p>© 2026 Vincent Heimann · GPL-2.0-or-later</p>
+    </div>
+    {% include signature.html %}
   </div>
-
 </footer>

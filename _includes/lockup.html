@@ -1,0 +1,9 @@
+{%- comment -%}
+  Lockup B (icon + "Post Quality" + "Manager") or D (icon + "Post Quality"), DESIGN.md § Lockup.
+  Parameters: variant = "b" | "d" (default b); tile = 32 | 20 (default 32; the header's 32 becomes 28 below 760 px).
+  Sizes in T-units come from the CSS (.lockup-t32, .lockup-t20). The icon is a copy of assets/icon.svg, decorative here:
+  the header link names the product with aria-label, the footer text names it in words.
+{%- endcomment -%}
+{%- assign lk_variant = include.variant | default: "b" -%}
+{%- assign lk_tile = include.tile | default: 32 -%}
+<span class="lockup lockup-{{ lk_variant }} lockup-t{{ lk_tile }}"><svg class="lockup-tile" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><rect width="20" height="20" fill="#1b2a41"/><g transform="translate(3 3) scale(0.7)"><path fill="#ffffff" fill-rule="evenodd" d="M 13.1 9.55 A 6.3 6.3 0 1 1 0.5 9.55 A 6.3 6.3 0 1 1 13.1 9.55 Z M 10.85 9.55 A 4.05 4.05 0 1 0 2.75 9.55 A 4.05 4.05 0 1 0 10.85 9.55 Z"/><rect fill="#00a32a" x="0" y="-1.12" width="4.81" height="2.24" transform="translate(9.47 12.22) rotate(45)"/><rect fill="#00a32a" x="0" y="-1.12" width="7.78" height="2.24" transform="translate(12.87 15.62) rotate(-45)"/><circle fill="#00a32a" cx="9.47" cy="12.22" r="1.12"/><circle fill="#00a32a" cx="12.87" cy="15.62" r="1.12"/><circle fill="#00a32a" cx="18.38" cy="10.12" r="1.12"/></g></svg><span class="lockup-text"><span class="name">Post Quality</span>{% if lk_variant == "b" %} <span class="manager">Manager</span>{% endif %}</span></span>

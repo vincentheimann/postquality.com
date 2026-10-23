@@ -1,0 +1,22 @@
+{%- comment -%}
+  A plugin picture, framed and captioned (DESIGN.md § Screenshot frame, brief D14). Parameters:
+  src (file name in assets/img without extension; a .webp and a .png of it exist), width, height (the PNG's pixels),
+  phone (optional: a narrower crop of the same screen shown below 760 px), phone_width, phone_height,
+  alt (true of both crops), caption, variant ("hero" for the one strong shadow, else "detail"),
+  priority (true for the first-screen picture: fetchpriority high; the others load lazily).
+{%- endcomment -%}
+{%- assign sh_dir = "/assets/img/" | relative_url -%}
+<figure class="shot shot-{{ include.variant | default: "detail" }}">
+  <div class="shot-frame">
+    <div class="shot-bar" aria-hidden="true"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="shot-url">yourblog.example/wp-admin/</span></div>
+    <picture>
+      {%- if include.phone %}
+      <source media="(max-width: 759.98px)" type="image/webp" srcset="{{ sh_dir }}{{ include.phone }}.webp" width="{{ include.phone_width }}" height="{{ include.phone_height }}">
+      <source media="(max-width: 759.98px)" srcset="{{ sh_dir }}{{ include.phone }}.png" width="{{ include.phone_width }}" height="{{ include.phone_height }}">
+      {%- endif %}
+      <source type="image/webp" srcset="{{ sh_dir }}{{ include.src }}.webp">
+      <img src="{{ sh_dir }}{{ include.src }}.png" width="{{ include.width }}" height="{{ include.height }}" alt="{{ include.alt }}" decoding="async"{% if include.priority %} fetchpriority="high"{% else %} loading="lazy"{% endif %}>
+    </picture>
+  </div>
+  <figcaption>{{ include.caption }}</figcaption>
+</figure>

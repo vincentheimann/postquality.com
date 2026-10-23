@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<div class="text-page">
+  <div class="wrap">
+    <article class="measure">
+      {%- if page.icon %}
+      <img class="text-page-icon" src="{{ "/assets/icon.svg" | relative_url }}" width="64" height="64" alt="">
+      {%- endif %}
+      <h1>{{ page.title }}</h1>
+{{ content }}
+    </article>
+  </div>
+</div>
