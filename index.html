@@ -7,7 +7,7 @@ title: Post Quality Manager
   <div class="wrap">
     <p class="eyebrow">AI content reviews for WordPress</p>
     <h1><span class="l">Score every post.</span> <span class="l">Know what to <span class="hl">fix next</span>.</span></h1>
-    <p class="lead">As a blog grows, older posts quietly fall behind your best work, and nothing tells you which one to fix. Post Quality Manager scores every post with AI, inside WP Admin, and ranks what to fix next.</p>
+    <p class="lead">As a blog grows, older posts quietly fall behind your best work. Post Quality Manager scores every post with AI, inside WP Admin, and ranks what to fix next.</p>
 {%- if site.launched %}
     <p class="req-line"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><span>You need your own n8n and an Anthropic API key, each paid separately. <a href="#need">What you need →</a></span></p>
     <div class="actions">
@@ -19,8 +19,8 @@ title: Post Quality Manager
 {%- else %}
     <div class="actions">
       <a class="btn btn-primary" href="{{ interest }}" aria-describedby="hero-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Tell me when it's available<span class="vh"> (opens your email app)</span></a>
-      <a class="btn btn-secondary" href="#need">Check what you need</a>
     </div>
+    <p class="hero-link"><a href="#need">What you need first<span aria-hidden="true"> ↓</span></a></p>
     <p class="action-note" id="hero-note"><strong>Pre-release.</strong> The button opens your email app: one email when it's installable, then your address is deleted. Or write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
 {%- endif %}
     <ul class="ticks" role="list">
@@ -161,7 +161,7 @@ title: Post Quality Manager
           <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Per-agent model and instructions</li>
           <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Automated Reviews on a schedule</li>
           <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Roles: what each role may do</li>
-          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Email support within 2 business days</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Email support within 5 business days</li>
         </ul>
         <a class="btn btn-secondary" href="{{ "/pricing/" | relative_url }}">See Pro pricing</a>
 {%- unless site.launched %}

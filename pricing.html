@@ -1,0 +1,145 @@
+---
+layout: default
+title: Pricing
+permalink: /pricing/
+---
+{%- capture interest -%}{% include interest-href.html from="the pricing page" %}{%- endcapture -%}
+{%- assign pr = site.data.pricing -%}
+{%- capture mark_yes -%}<svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span class="vh">Included</span>{%- endcapture -%}
+{%- capture mark_no -%}<span class="dash" aria-hidden="true">–</span><span class="vh">Not in Free</span>{%- endcapture -%}
+<div class="page-head">
+  <div class="wrap">
+    <h1>Post Quality Manager Pro pricing</h1>
+    <p class="section-lead">The free plugin is the trial. Pro adds the agents and the automation, from 49 USD, EUR or CHF a year.</p>
+  </div>
+</div>
+
+<section class="section tint" aria-labelledby="packs-h">
+  <div class="wrap">
+    <h2 id="packs-h">Pro, per year</h2>
+{%- if site.launched %}
+    <div class="packs-wrap">
+      <fieldset class="cur">
+        <legend>Show prices in</legend>
+        <div class="cur-tabs">
+{%- for c in pr.currencies %}
+          <label><input type="radio" name="cur" id="cur-{{ c.code }}" value="{{ c.code }}" autocomplete="off"{% if forloop.first %} checked{% endif %}><span><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>{{ c.label }}</span></label>
+{%- endfor %}
+        </div>
+      </fieldset>
+      <ul class="packs" role="list">
+{%- for p in pr.packs %}
+        <li class="pack">
+          <h3>{{ p.label }}</h3>
+          <p class="pack-who">{{ p.who }}</p>
+{%- assign monthly = p.price | divided_by: 12.0 | round %}
+          <div class="pack-prices">
+{%- for c in pr.currencies %}
+          <p class="price" data-cur="{{ c.code }}"><span class="price-big">{{ p.price }}</span> <span class="price-per"><strong>{{ c.label }}</strong> per year<br> <span class="price-month">about {{ monthly }} {{ c.label }} a month</span></span></p>
+{%- endfor %}
+          </div>
+{%- for c in pr.currencies %}
+          <a class="btn btn-primary-light buy" data-cur="{{ c.code }}" href="{{ pr.checkout_base }}?pricing_id={{ p.pricing_ids[c.code] }}&amp;currency={{ c.code }}" aria-describedby="buy-note"><span>{{ p.buy }}<span class="buy-cur"> in {{ c.label }}</span></span></a>
+{%- endfor %}
+        </li>
+{%- endfor %}
+      </ul>
+      <p class="cur-note" data-cur="chf">CHF: card only; PayPal in USD and EUR.</p>
+    </div>
+    <p class="buy-notes" id="buy-note">Checkout opens on Freemius, the seller of record; prices exclude VAT or sales tax, which Freemius adds where it applies. Pro renews automatically each year at the price you paid, with a reminder email first; cancel any time in the customer portal and Pro stays on until the paid year ends.</p>
+{%- else %}
+    <p class="packs-line">{% for p in pr.packs %}<strong>{{ p.price }}</strong> for {{ p.label | downcase }}{% unless forloop.last %} · {% endunless %}{% endfor %}, in USD, EUR or CHF.</p>
+    <div class="actions">
+      <a class="btn btn-primary-light" href="{{ interest }}" aria-describedby="packs-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Tell me when it's available<span class="vh"> (opens your email app)</span></a>
+    </div>
+    <p class="packs-note" id="packs-note">Not on sale yet. One email when the first public release is out, then your address is deleted.</p>
+{%- endif %}
+    <p class="cost-line"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><span>The price covers the plugin only. You pay your own n8n hosting and your own AI provider separately.</span></p>
+    <ul class="assure" role="list">
+      <li class="assure-item">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-check"/></svg>
+        <div>
+          <h3>14-day money-back guarantee</h3>
+          <p>Full refund within 14 days of buying or renewing, no questions asked. Freemius handles checkout, tax, invoices and refunds.</p>
+        </div>
+      </li>
+      <li class="assure-item">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-archive"/></svg>
+        <div>
+          <h3>Nothing deleted if Pro ends</h3>
+          <p>Your site returns to Free. Reviews, settings, schedules and role rights stay.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="compare-h">
+  <div class="wrap">
+    <h2 id="compare-h">Free and Pro compared</h2>
+    <div class="table-scroll" role="region" aria-labelledby="compare-h" tabindex="0">
+      <table class="compare">
+        <caption class="vh">Free and Pro compared</caption>
+        <thead>
+          <tr><th scope="col"><span class="vh">Feature</span></th><th scope="col">Free</th><th scope="col">Pro</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Review and Key Takeaways</th><td>{{ mark_yes }}</td><td>{{ mark_yes }}</td></tr>
+          <tr><th scope="row">Dashboard, Post Reviews, Insert into Post</th><td>{{ mark_yes }}</td><td>{{ mark_yes }}</td></tr>
+          <tr><th scope="row">Rewrite, Sources, SEO and Audit agents</th><td>{{ mark_no }}</td><td>{{ mark_yes }}</td></tr>
+          <tr><th scope="row">Per-agent model, effort and instructions</th><td>{{ mark_no }}</td><td>{{ mark_yes }}</td></tr>
+          <tr><th scope="row">Automated Reviews on a schedule</th><td>{{ mark_no }}</td><td>{{ mark_yes }}</td></tr>
+          <tr><th scope="row">Roles tab</th><td>{{ mark_no }}</td><td>{{ mark_yes }}</td></tr>
+          <tr><th scope="row">Updates</th><td>{{ mark_yes }}</td><td>{{ mark_yes }}</td></tr>
+          <tr><th scope="row">Support</th><td>Email, best effort</td><td>Email, within 5 business days</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Rewrite needs HTTPS on your site.</p>
+  </div>
+</section>
+
+<section class="section tint" aria-labelledby="faq-h">
+  <div class="wrap">
+    <h2 id="faq-h">FAQ</h2>
+    <div class="faq-list">
+      <details class="faq">
+        <summary>What else do I pay?</summary>
+        <div class="faq-a">
+          <p>Your own n8n hosting, and Anthropic per review, on your own API key. Both bill you directly: the price of Pro covers the plugin only. To cap the AI bill, set a spend limit in your Anthropic account. <a href="{{ "/docs/#cost" | relative_url }}">What it costs</a>.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Is tax included?</summary>
+        <div class="faq-a">
+          <p>No. Prices exclude VAT or sales tax; Freemius adds it at checkout where it applies. As the seller of record, Freemius also sends the invoice.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>How do I cancel?</summary>
+        <div class="faq-a">
+          <p>Cancel the renewal any time in the customer portal, linked from your purchase email. Pro stays on until the end of the year you paid for, then your site returns to Free. Until you cancel, Pro renews every year at the price you paid, and Freemius emails you before each renewal.</p>
+          <p>Within 14 days of buying or renewing, you can ask for a full refund instead: see the <a href="{{ "/refund/" | relative_url }}">refund policy</a>.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>What counts as a site?</summary>
+        <div class="faq-a">
+          <p>Each production site uses one activation, yours or a client's, and the license stays yours. Staging and local copies are free when Freemius recognises the address, such as <code>localhost</code>, <code>.local</code>, <code>.test</code> or a <code>staging.</code> subdomain, and you can move an activation in the customer portal. The full wording is in the <a href="{{ "/terms/" | relative_url }}">terms of service</a>, section 3.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>Can one n8n serve several sites?</summary>
+        <div class="faq-a">
+          <p>Yes. The setup guide gives each site its own workflow.</p>
+        </div>
+      </details>
+      <details class="faq">
+        <summary>What happens when my license ends?</summary>
+        <div class="faq-a">
+          <p>Nothing is deleted. Your site returns to Free: reviews, settings, schedules and role rights are kept, and Review and Key Takeaways keep working. Renewing unlocks everything again.</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

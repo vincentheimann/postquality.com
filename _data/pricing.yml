@@ -1,0 +1,28 @@
+# Pro, per year: the three site packs and Freemius's hosted checkout, read by pricing.html (story 86, build 2).
+# The record is docs/distribution.md in the plugin repository (Freemius: product 41144, plan Pro 71340, the nine
+# pricing IDs set 2026-10-09); prices from ADR 0013 D5. Change them there first, then here. Checkout is a plain link
+# to Freemius's hosted page: no script, nothing stored, the currency is the one the visitor shows.
+checkout_base: "https://checkout.freemius.com/product/41144/plan/71340/"
+currencies:
+  - code: usd
+    label: USD
+  - code: eur
+    label: EUR
+  - code: chf
+    label: CHF
+packs:
+  - label: "1 site"
+    buy: "Buy for 1 site"
+    who: "One blog."
+    price: 49
+    pricing_ids: { usd: 97893, eur: 97896, chf: 97905 }
+  - label: "5 sites"
+    buy: "Buy for 5 sites"
+    who: "Your blog plus client sites."
+    price: 99
+    pricing_ids: { usd: 97894, eur: 97897, chf: 97906 }
+  - label: "Unlimited sites"
+    buy: "Buy for unlimited sites"
+    who: "Agencies, or more than five blogs."
+    price: 199
+    pricing_ids: { usd: 97895, eur: 97898, chf: 97907 }
