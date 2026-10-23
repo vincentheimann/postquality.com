@@ -372,6 +372,7 @@ a:hover { text-decoration-thickness: 2px; }
 }
 .version-line + .action-note { margin-top: 6px; }
 .action-note strong { color: var(--white); }
+.hero-link { margin: 14px 0 0; font-size: var(--fs-body-sm); font-weight: 600; line-height: 1.5; }
 .ticks {
   display: flex;
   flex-wrap: wrap;
@@ -655,6 +656,200 @@ a:hover { text-decoration-thickness: 2px; }
 .text-page code { font-family: ui-monospace, Consolas, "SF Mono", Menlo, monospace; font-size: .9em; }
 .text-page-icon { display: block; width: 64px; height: 64px; margin: 0 0 24px; }
 .text-page .btn { margin-top: 8px; }
+.text-page .install { margin: 0 0 24px; }
+.text-page .shot { margin: 8px 0 28px; }
+
+/* in-page anchors (/docs/#getting-n8n, /docs/#cost): the band header is not sticky, so a little air above the target */
+main [id] { scroll-margin-top: 24px; }
+
+/* ---------- pricing: the page head, the comparison table ---------- */
+.page-head { padding: var(--section-first) 0 48px; }
+.page-head h1 { margin: 0; font-size: var(--fs-headline); line-height: 1.15; letter-spacing: -.02em; }
+.table-scroll { margin: 28px 0 0; overflow-x: auto; }
+.compare {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-body-card);
+  line-height: 1.5;
+  overflow-wrap: normal;       /* words stay whole: an overflowing row scrolls in its region instead */
+  hyphens: manual;
+}
+.compare th, .compare td { padding: 14px 16px; border-bottom: 1px solid var(--hairline); text-align: center; vertical-align: middle; }
+.compare thead th { border-bottom: 2px solid var(--navy); color: var(--navy); font-size: var(--fs-title-sm); line-height: 1.3; }
+.compare th[scope="col"] { width: 22%; }
+.compare th[scope="col"]:first-child { width: auto; }
+.compare th[scope="row"] { padding-left: 0; color: var(--navy); font-weight: 600; text-align: left; }
+.compare .icon { width: 22px; height: 22px; vertical-align: middle; }
+.compare .dash { color: var(--ink-muted); font-weight: 700; }
+.table-note { margin: 14px 0 0; color: var(--ink-muted); font-size: var(--fs-caption); line-height: 1.5; }
+
+/* ---------- pricing: packs, before launch ---------- */
+.packs-line { margin: 18px 0 0; color: var(--ink-body); font-size: var(--fs-section-lead); line-height: 1.55; }
+.packs-line strong { color: var(--navy); }
+.packs-line + .actions { margin-top: 24px; }
+.packs-note { max-width: 620px; margin: 12px 0 0; color: var(--ink-muted); font-size: var(--fs-caption); line-height: 1.5; }
+
+/* ---------- pricing: currency switch and pack cards, after launch ----------
+   Radio tabs (no script, nothing stored: a reload shows USD). The swap needs :has() on the shared ancestor; without it
+   all three currencies show, each price and button labelled with its code, and the switch stays hidden. */
+.cur { display: none; min-width: 0; margin: 28px 0 0; padding: 0; border: 0; }
+.cur legend {
+  margin: 0 0 10px;
+  padding: 0;
+  color: var(--ink-muted);
+  font-size: var(--fs-label-caps);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.cur-tabs { display: flex; flex-wrap: wrap; gap: 10px; }
+.cur label { position: relative; display: inline-flex; }
+.cur input {                    /* focusable, never display: none: the clip pattern; the span shows its state */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+}
+.cur input + span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 76px;
+  min-height: 44px;
+  padding: 8px 16px;
+  background: var(--white);
+  border: 1.5px solid var(--navy);  /* kept in forced colours */
+  border-radius: var(--rounded-sm);
+  color: var(--navy);
+  font-size: var(--fs-button);
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+}
+.cur input + span .icon { width: 18px; height: 18px; visibility: hidden; }  /* laid out in every tab: no tab moves on a change */
+.cur input:checked + span { background: var(--navy); color: var(--white); }
+.cur input:checked + span .icon { visibility: visible; }  /* the selected tab differs by more than colour */
+.cur label:hover input:not(:checked) + span { background: var(--hover-on-navy); }
+.cur input:focus-visible + span { outline: 3px solid var(--ring); outline-offset: 2px; }
+
+.packs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--gap-lg);
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.pack {                         /* three equal white cards, none highlighted */
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: var(--white);
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-sm);
+}
+.pack h3 { margin: 0; font-size: var(--fs-title-lg); line-height: 1.2; letter-spacing: -.02em; }
+.pack-who { margin: 6px 0 0; color: var(--ink-muted); font-size: var(--fs-body-card); line-height: 1.55; }
+.pack .price { flex-wrap: wrap; margin: 22px 0 0; color: var(--navy); }
+.pack .price-per { color: var(--ink-body); }
+.pack .price-per strong { color: var(--navy); }
+.price-month { color: var(--ink-muted); }
+.pack-prices { flex: 1 0 auto; margin: 0 0 24px; }   /* the buttons line up at the foot of equal cards */
+.cur-note { margin: 14px 0 0; color: var(--ink-muted); font-size: var(--fs-caption); line-height: 1.5; }
+
+@supports selector(:has(a)) {
+  .cur { display: block; }
+  .packs-wrap:has(#cur-usd:checked) [data-cur]:not([data-cur="usd"]),
+  .packs-wrap:has(#cur-eur:checked) [data-cur]:not([data-cur="eur"]),
+  .packs-wrap:has(#cur-chf:checked) [data-cur]:not([data-cur="chf"]) { display: none; }
+  .buy-cur {                    /* the shown currency is named by the switch; screen readers still hear " in CHF" */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+@supports not selector(:has(a)) {  /* the fallback stacks all three currencies in each card */
+  .pack .price + .price { margin-top: 14px; }
+  .pack .btn + .btn { margin-top: 10px; }
+}
+
+.buy-notes { max-width: 760px; margin: 24px 0 0; padding: 0; list-style: none; font-size: var(--fs-body-sm); line-height: 1.55; }
+.cost-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 760px;
+  margin: 28px 0 0;
+  color: var(--ink-body);
+  font-size: var(--fs-body-card);
+  line-height: 1.55;
+}
+.cost-line .icon { margin-top: 3px; color: var(--navy); }
+
+/* ---------- FAQ (/pricing/, /docs/): native details/summary, all closed on load ---------- */
+.faq-list { max-width: 800px; margin: 28px 0 0; border-top: 1px solid var(--hairline); }
+.faq { border-bottom: 1px solid var(--hairline); }
+.faq > summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 14px 44px 14px 0;
+  color: var(--navy);
+  font-size: var(--fs-title-sm);
+  font-weight: 700;
+  line-height: 1.3;
+  list-style: none;
+  cursor: pointer;
+}
+.faq > summary::-webkit-details-marker { display: none; }
+.faq > summary::marker { content: ""; }
+.faq > summary::before,
+.faq > summary::after {         /* the plus, drawn with borders so it survives forced colours; open, it is a minus */
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 16px;
+  margin-top: -1px;
+  border-top: 2px solid currentColor;
+}
+.faq > summary::after { transform: rotate(90deg); }
+.faq[open] > summary::after { display: none; }
+.faq > summary:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.faq-a { padding: 0 0 18px; }
+.faq-a p { margin: 0 0 12px; font-size: var(--fs-body-card); line-height: 1.55; }
+.faq-a p:last-child { margin-bottom: 0; }
+.faq-a blockquote { margin: 0 0 12px; padding: 2px 0 2px 18px; border-left: 3px solid var(--hairline); }
+.faq-a code { font-family: ui-monospace, Consolas, "SF Mono", Menlo, monospace; font-size: .9em; }
+
+/* ---------- docs: the contents list ---------- */
+.toc { margin: 0 0 8px; padding: 18px 22px; background: var(--tint); border-radius: var(--rounded-sm); }
+.text-page .toc-title {
+  margin: 0 0 6px;
+  color: var(--ink-muted);
+  font-size: var(--fs-label-caps);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.toc ul { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 32px; }
+.toc li + li { margin-top: 0; }
+.toc li { padding: 3px 0; break-inside: avoid; }
+.toc a { font-weight: 600; }
 
 /* ---------- footer ---------- */
 .site-footer {
@@ -733,6 +928,8 @@ a:hover { text-decoration-thickness: 2px; }
   .pillars { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .pillars .shot { width: 100%; max-width: 480px; margin-left: auto; margin-right: auto; }  /* the 880 px review image, stacked */
   .steps { gap: var(--gap-lg); }
+  .packs { gap: var(--gap-md); }
+  .pack { padding: var(--card-padding); }
 }
 
 /* ---------- phone: below 760 px ---------- */
@@ -789,6 +986,19 @@ a:hover { text-decoration-thickness: 2px; }
   .text-page h2 { font-size: var(--fs-title-mobile); }
   .text-page table { font-size: var(--fs-body-card-mobile); }
   .footer-mail { text-align: left; }
+
+  .table-scroll { margin-top: 28px; }
+  .compare { font-size: var(--fs-body-card-mobile); }
+  .compare th, .compare td { padding: 12px 8px; }
+  .compare thead th { font-size: var(--fs-body-card-mobile); }
+  .packs-line { font-size: var(--fs-section-lead-mobile); }
+  .packs { grid-template-columns: minmax(0, 1fr); gap: var(--gap-sm); }
+  .pack { padding: 24px 20px; }
+  .cost-line { font-size: var(--fs-body-card-mobile); }
+  .faq > summary { padding-right: 36px; }
+  .faq > summary::before, .faq > summary::after { right: 6px; }
+  .faq-a p { font-size: var(--fs-body-card-mobile); }
+  .toc ul { columns: 1; }
 }
 
 /* below the 360 px design target: lockup B on the first line, the Menu on the second */
@@ -804,4 +1014,6 @@ a:hover { text-decoration-thickness: 2px; }
   .shot-frame, .step-n { border: 2px solid CanvasText; }
   .hl { background: none; text-decoration: underline; }
   .skip-link { border-color: ButtonText; }
+  .cur input:checked + span { background: Highlight; color: HighlightText; forced-color-adjust: none; }
+  .toc { border: 1px solid CanvasText; }
 }
