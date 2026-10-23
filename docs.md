@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Documentation
+description: How to set up and use Post Quality Manager, from what it needs to upgrading to Pro.
 permalink: /docs/
 ---
 

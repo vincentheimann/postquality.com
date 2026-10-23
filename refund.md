@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Refund policy
+description: Post Quality Manager Pro comes with a 14-day money-back guarantee, after buying or renewing, no questions asked.
 permalink: /refund/
 ---
 

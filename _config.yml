@@ -1,5 +1,7 @@
 title: Post Quality Manager
 description: Score every post, see what to fix next and keep your back-catalog sharp. AI content reviews, stored and tracked in WP Admin.
+# The home page's <title> is "title | tagline" (jekyll-seo-tag); the footer and the sharing card carry the description.
+tagline: AI content reviews for WordPress
 url: https://postquality.com
 author: Vincent Heimann
 email: hello@postquality.com
@@ -19,6 +21,15 @@ version_date: ""
 tested_up_to: ""
 wporg_url: ""
 changelog_url: ""
+
+# Every page shares the sharing card (assets/og-card.png, source _tools/og-card.html; README). jekyll-seo-tag turns it
+# into og:image, twitter:image and twitter:card summary_large_image; _includes/head.html adds its size and alt text.
+# Each page's own one-sentence description: lives in its front matter.
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/og-card.png
 
 exclude:
   - README.md
