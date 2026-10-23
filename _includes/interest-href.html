@@ -1,0 +1,8 @@
+{%- comment -%}
+  The interest email (EXPERIENCE.md § Where the actions lead), one subject for every placement. The body ends with one
+  visible phrase naming the page it was clicked on (brief D16): the visitor sees it and may delete it; the site stores nothing.
+  Parameter: from = "the home page" (default), "the pricing page", ...
+{%- endcomment -%}
+{%- assign ih_from = include.from | default: "the home page" | url_encode | replace: "+", "%20" -%}
+{%- capture ih_href -%}mailto:{{ site.email }}?subject=Tell%20me%20when%20Post%20Quality%20Manager%20is%20available&amp;body=Please%20tell%20me%20once%20when%20Post%20Quality%20Manager%20can%20be%20installed.%0D%0A%0D%0ASent%20from%20{{ ih_from }}.{%- endcapture -%}
+{{- ih_href | strip -}}{%- comment -%} no trailing newline: this include sits inside an href {%- endcomment -%}

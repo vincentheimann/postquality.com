@@ -1,0 +1,215 @@
+---
+layout: default
+title: Post Quality Manager
+---
+{%- capture interest -%}{% include interest-href.html from="the home page" %}{%- endcapture -%}
+<div class="hero on-dark">
+  <div class="wrap">
+    <p class="eyebrow">AI content reviews for WordPress</p>
+    <h1><span class="l">Score every post.</span> <span class="l">Know what to <span class="hl">fix next</span>.</span></h1>
+    <p class="lead">As a blog grows, older posts quietly fall behind your best work, and nothing tells you which one to fix. Post Quality Manager scores every post with AI, inside WP Admin, and ranks what to fix next.</p>
+{%- if site.launched %}
+    <p class="req-line"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><span>You need your own n8n and an Anthropic API key, each paid separately. <a href="#need">What you need →</a></span></p>
+    <div class="actions">
+      <a class="btn btn-primary" href="{{ "/#need" | relative_url }}">Get the free plugin</a>
+      <a class="btn btn-secondary" href="{{ "/pricing/" | relative_url }}">See Pro pricing</a>
+    </div>
+    <p class="version-line">Version {{ site.version }}, updated {{ site.version_date }}, tested up to WordPress {{ site.tested_up_to }} · <a href="{{ site.changelog_url }}">What's new →</a></p>
+    <p class="action-note">Start free with Review and Key Takeaways. Pro comes with a 14-day money-back guarantee.</p>
+{%- else %}
+    <div class="actions">
+      <a class="btn btn-primary" href="{{ interest }}" aria-describedby="hero-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Tell me when it's available<span class="vh"> (opens your email app)</span></a>
+      <a class="btn btn-secondary" href="#need">Check what you need</a>
+    </div>
+    <p class="action-note" id="hero-note"><strong>Pre-release.</strong> The button opens your email app: one email when it's installable, then your address is deleted. Or write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+{%- endif %}
+    <ul class="ticks" role="list">
+      <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Runs on your own n8n and Anthropic key</li>
+      <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Your posts go only there</li>
+{%- if site.launched %}
+      <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Nothing deleted if Pro ends</li>
+{%- else %}
+      <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Free plugin, no license needed</li>
+{%- endif %}
+    </ul>
+  </div>
+</div>
+
+<div class="hero-shot">
+  <div class="wrap">
+    {% include screenshot.html variant="hero" priority=true src="dashboard" width="2048" height="1097" phone="dashboard-phone" phone_width="800" phone_height="1162" alt="Illustration of the Post Quality Dashboard in WP Admin: average score 71; 3 posts in Major revision, 9 in Needs revision, 14 not analyzed, 22 ready to ship; a Fix next list led by a post scored 42." caption="An illustration of the Dashboard with fictional data." %}
+  </div>
+</div>
+
+<section class="section section-first tint" aria-labelledby="pillars-h">
+  <div class="wrap pillars">
+    <div>
+      <h2 id="pillars-h"><span class="kicker">What a review looks at</span> Four pillars, any niche</h2>
+      <ul class="pillar-list" role="list">
+        <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Structure</li>
+        <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Readability</li>
+        <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Engagement</li>
+        <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Credibility</li>
+      </ul>
+      <p class="pillars-note">Every post is scored on the same four pillars, then you get the edits that matter most. Your niche comes in through a Blog Profile and your Editorial Standards, not through code.</p>
+    </div>
+    {% include screenshot.html src="review" width="880" height="783" alt="Illustration of a review in Post Reviews: score 70, Needs revision; pillar scores Structure 68, Readability 74, Engagement 59, Credibility 81; three top edits, the first: open with the reader's problem." caption="An illustration of a review in Post Reviews. Fictional post." %}
+  </div>
+</section>
+
+<section class="section" id="need" aria-labelledby="need-h">
+  <div class="wrap">
+    <h2 id="need-h"><span class="kicker">Before you install</span> What you need</h2>
+    <p class="section-lead">Post Quality runs on your own accounts, so you hold the keys. Check these three first.</p>
+    <ul class="need" role="list">
+      <li class="need-item">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-workflow"/></svg>
+        <h3>Your own n8n</h3>
+        <p>The workflow tool your reviews run in. Self-hosted; your site and n8n must reach each other. No n8n yet? <a href="{{ "/docs/#getting-n8n" | relative_url }}">How to get n8n</a>.</p>
+      </li>
+      <li class="need-item">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-key"/></svg>
+        <h3>An Anthropic API key</h3>
+        <p>The setup guide checks it once and stores it in n8n, never in the plugin.</p>
+      </li>
+      <li class="need-item">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-bill"/></svg>
+        <h3>Your own AI bill</h3>
+        <p>You pay Anthropic per review and your n8n hosting. Cap it with a spend limit in your Anthropic account. <a href="{{ "/docs/#cost" | relative_url }}">What it costs</a>.</p>
+      </li>
+    </ul>
+    <ul class="chips" role="list">
+      <li class="chip">WordPress 6.6+</li>
+      <li class="chip">PHP 8.0+</li>
+      <li class="chip">Single site, no Multisite</li>
+    </ul>
+    <p class="fit">A good fit if you run your own WordPress and can follow a setup guide for n8n. Not a fit if you want a hosted service with nothing to set up.</p>
+{%- if site.launched %}
+    <div class="install">
+      <a class="btn btn-primary-light" href="{{ site.wporg_url }}" aria-describedby="install-note">Install from WordPress.org</a>
+      <p class="version-line">Version {{ site.version }}, updated {{ site.version_date }}, tested up to WordPress {{ site.tested_up_to }} · <a href="{{ site.changelog_url }}">What's new →</a></p>
+      <p class="install-note" id="install-note">Opens the plugin's WordPress.org page.</p>
+    </div>
+{%- endif %}
+  </div>
+</section>
+
+<section class="section tint" aria-labelledby="how-h">
+  <div class="wrap">
+    <h2 id="how-h"><span class="kicker">How it works</span> Three steps to your first score</h2>
+    <ol class="steps" role="list">
+      <li>
+        <span class="step-n" aria-hidden="true">1</span>
+        <h3>Connect your accounts</h3>
+        <p>The setup guide asks for three values: your n8n address, an n8n API key and your Anthropic key. It builds the workflow and tests the connection both ways.</p>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">2</span>
+        <h3>Review a post</h3>
+        <p>Click Review on a post, or select several at once. Your site sends each one to your own n8n workflow, which asks Anthropic's models.</p>
+      </li>
+      <li>
+        <span class="step-n" aria-hidden="true">3</span>
+        <h3>Fix what matters first</h3>
+        <p>The score, the issues and the suggested edits come back into WP Admin. The Dashboard ranks what to fix next.</p>
+      </li>
+    </ol>
+    <div class="how-shot">
+      {% include screenshot.html src="setup" width="1280" height="708" phone="setup-phone" phone_width="800" phone_height="777" alt="Illustration of the setup guide, step 2 of 5: the n8n address and the n8n API key are connected, and a field asks for the Anthropic API key." caption="An illustration of the setup guide's three values. Fictional values." %}
+    </div>
+    <ol class="flow" role="list" aria-label="Where your content goes">
+      <li><span class="flow-node flow-end">Your site</span></li>
+      <li><svg class="icon flow-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg><span class="flow-node">Your n8n workflow</span></li>
+      <li><svg class="icon flow-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg><span class="flow-node">Anthropic's models</span></li>
+      <li><svg class="icon flow-arrow" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg><span class="flow-node flow-end">Back in WP Admin</span></li>
+    </ol>
+    <p class="trust"><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Your posts go only to your own n8n and, through it, to Anthropic. <a href="{{ "/privacy/" | relative_url }}">Privacy</a>.</span></p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="plans-h">
+  <div class="wrap">
+    <h2 id="plans-h"><span class="kicker">Free and Pro</span> Start free. Pro adds the agents and the automation.</h2>
+    <div class="plans">
+      <article class="plan plan-free" aria-labelledby="free-h">
+        <h3 id="free-h">Free</h3>
+        <p class="plan-sub">No license needed.</p>
+        <ul class="features" role="list">
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Review and Key Takeaways on every post</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Dashboard: Fix next and the trend</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Post Reviews</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Insert into Post</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Updates</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Email support, best effort</li>
+        </ul>
+        <p class="plan-note"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-info"/></svg><span>Needs your own n8n and Anthropic key. <a href="#need">What you need</a></span></p>
+{%- if site.launched %}
+        <a class="btn btn-primary-light" href="{{ "/#need" | relative_url }}">Get the free plugin</a>
+        <p class="plan-foot">Free, from WordPress.org.</p>
+{%- else %}
+        <a class="btn btn-primary-light" href="{{ interest }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Tell me when it's available<span class="vh"> (opens your email app)</span></a>
+        <p class="plan-foot">Not installable yet. Opens your email app.</p>
+{%- endif %}
+      </article>
+      <article class="plan plan-pro on-dark" aria-labelledby="pro-h">
+        <h3 id="pro-h">Pro</h3>
+        <p class="price"><span class="price-big">49</span> <span class="price-per">per year, 1 site,<br> USD, EUR or CHF</span></p>
+        <p class="price-more">99 for 5 sites, 199 for unlimited sites. Plus VAT or sales tax where it applies.</p>
+        <ul class="features" role="list">
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Everything in Free</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Rewrite, Sources, SEO and Audit agents</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Per-agent model and instructions</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Automated Reviews on a schedule</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Roles: what each role may do</li>
+          <li><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Email support within 2 business days</li>
+        </ul>
+        <a class="btn btn-secondary" href="{{ "/pricing/" | relative_url }}">See Pro pricing</a>
+{%- unless site.launched %}
+        <p class="plan-foot">On sale with the first public release.</p>
+{%- endunless %}
+      </article>
+    </div>
+    <ul class="assure" role="list">
+      <li class="assure-item">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-check"/></svg>
+        <div>
+          <h3>14-day money-back guarantee</h3>
+          <p>Full refund within 14 days of buying or renewing, no questions asked. Freemius handles checkout, tax, invoices and refunds.</p>
+        </div>
+      </li>
+      <li class="assure-item">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-archive"/></svg>
+        <div>
+          <h3>Nothing deleted if Pro ends</h3>
+          <p>Your site returns to Free. Reviews, settings, schedules and role rights stay.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section tint closing" aria-labelledby="closing-h">
+  <div class="wrap">
+{%- if site.launched %}
+    <h2 id="closing-h">Start with the free plugin.</h2>
+    <p class="closing-text">Review and Key Takeaways on every post, no license. Check what you need, then install from WordPress.org.</p>
+    <div class="actions">
+      <a class="btn btn-primary-light" href="{{ "/#need" | relative_url }}">Get the free plugin</a>
+      <a class="btn btn-secondary-light" href="{{ "/pricing/" | relative_url }}">See Pro pricing</a>
+    </div>
+{%- else %}
+    <h2 id="closing-h">Hear about it once.</h2>
+    <p class="closing-text">One email when the free plugin is installable, then your address is deleted. No newsletter, no follow-up.</p>
+    <div class="actions">
+      <a class="btn btn-primary-light" href="{{ interest }}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Tell me when it's available<span class="vh"> (opens your email app)</span></a>
+    </div>
+    <p class="closing-foot">Opens your email app.</p>
+{%- endif %}
+  </div>
+</section>
+
+<div class="author">
+  <div class="wrap">
+    <p class="trust"><svg class="icon icon-check" aria-hidden="true" focusable="false"><use href="#i-check"/></svg><span>Built by the author and used on real blogs.</span></p>
+  </div>
+</div>

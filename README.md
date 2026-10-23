@@ -1,13 +1,21 @@
 # postquality.com
 
-The public home of Post Quality Manager, the WordPress plugin: a static site served by GitHub Pages at https://postquality.com (Jekyll, `minima` theme, built by GitHub Pages).
+The public home of Post Quality Manager, the WordPress plugin: a static site served by GitHub Pages at https://postquality.com (Jekyll, built by GitHub Pages). It uses its own layouts and one stylesheet, no theme, no JavaScript, no web font and no third-party request.
 
-- `index.md`, `pricing.md`, `docs.md`: the front, pricing and documentation pages.
-- `privacy.md`, `terms.md`, `refund.md`, `support.md`: the policies. Their source of truth is `docs/policies/` in the plugin repository; change them there first, then copy here.
-- `_includes/head.html`, `_includes/footer.html`: copies of `minima` 2.5.1's, with the favicon and the policy links added and the analytics include removed; `assets/main.scss` darkens two theme colours for contrast.
+- `index.html`: the home page. `pricing.md`, `docs.md`: the pricing and documentation pages.
+- `privacy.md`, `terms.md`, `refund.md`, `support.md`: the policies. Their source of truth is `docs/policies/` in the plugin repository; change them there first, then copy here: keep the front matter, drop the source's `# Title` line (the layout prints `page.title` as the h1).
+- `_layouts/default.html` (every page: skip link, header, `main`, footer) and `_layouts/page.html` (text pages: the h1 and a 720 px column; `icon: true` in the front matter adds the 64 px icon, used by the 404).
+- `_includes/`: `head.html` (SEO tags, the stylesheet, the favicon), `header.html` (lockup B on the band strip, the Main nav, the Menu below 1000 px), `footer.html`, `lockup.html` (the icon plus the name as live text, variants B and D), `site-action.html` and `interest-href.html` (the site-wide action and the interest email), `screenshot.html` (a framed, captioned plugin picture), `icons.html` (inline SVG line icons).
+- `assets/css/site.css`: the design tokens as CSS custom properties and every component, from the design spine in the plugin repository (story 86). `assets/img/`: the plugin pictures, each as WebP with a PNG fallback, under 250 KB. Today they are illustrations with fictional data, captioned as such; real captures replace them under the same names.
+- `assets/icon.svg`, `assets/icon-128x128.png`: the brand icon (favicon, lockup, 404). Never edited here.
+- `_includes/signature.html`: the author's signature at the foot of every page, linking to heimvin.me. Its glyph is the Material Symbols "fingerprint" icon by Google, under the Apache License 2.0 (https://www.apache.org/licenses/LICENSE-2.0).
 - `404.html`, `robots.txt`: the missing-page page and the crawler rules; `jekyll-sitemap` writes `sitemap.xml`.
 - `CNAME`: the custom domain.
 
-Local build (optional, GitHub Pages builds on push): `bundle config set --local path vendor/bundle` (the setting lives in the ignored `.bundle/`, so a fresh clone needs it; gems go to the ignored `vendor/`), `bundle install`, then `PAGES_REPO_NWO=vincentheimann/postquality.com bundle exec jekyll build --baseurl ""`. Without a GitHub token, `jekyll-github-metadata` cannot find the repository and guesses a `/pages/...` base URL; the two settings stand in for what GitHub Pages knows on its own. On Windows, the Ruby with the DevKit is `C:/Ruby32-x64` (some gems build native extensions); run Bundler with `MSYSTEM` and `MSYS` unset.
+**Launch flag.** `_config.yml` carries `launched: false`. Until launch, every action is the interest email (`mailto:` with a fixed subject; its body names the page it was sent from) and no install or buy link renders. At the release, one edit to `_config.yml`: `launched: true` and the five values under it (`version`, `version_date`, `tested_up_to`, `wporg_url`, `changelog_url`). Then the header, hero, Free card and closing action lead to **Get the free plugin**, the hero shows the requirement line and the version line, and What you need ends with **Install from WordPress.org**. Check the flipped state locally first, with the local build's settings and an overlay config: `JEKYLL_ENV=production PAGES_REPO_NWO=vincentheimann/postquality.com bundle exec jekyll build --baseurl "" --config _config.yml,<a file with launched: true and the five values>`.
 
-Improving the site (content, screenshots, checkout, layout) is plugin backlog story 57.
+`theme: null` keeps GitHub Pages from applying its default theme (Primer) on top of the site's own layouts.
+
+Local build (optional, GitHub Pages builds on push): `bundle config set --local path vendor/bundle` (the setting lives in the ignored `.bundle/`, so a fresh clone needs it; gems go to the ignored `vendor/`), `bundle install`, then `JEKYLL_ENV=production PAGES_REPO_NWO=vincentheimann/postquality.com bundle exec jekyll build --baseurl ""`. Without a GitHub token, `jekyll-github-metadata` cannot find the repository and guesses a `/pages/...` base URL; the two settings stand in for what GitHub Pages knows on its own. On Windows, the Ruby with the DevKit is `C:/Ruby32-x64` (some gems build native extensions); run Bundler with `MSYSTEM` and `MSYS` unset.
+
+The site's design and copy come from plugin backlog story 86 (direction "Navy and check").

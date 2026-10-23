@@ -3,19 +3,23 @@ description: Score every post, see what to fix next and keep your back-catalog s
 url: https://postquality.com
 author: Vincent Heimann
 email: hello@postquality.com
-theme: minima
+# The site's own layouts (_layouts/, _includes/, assets/css/site.css). GitHub Pages
+# falls back to jekyll-theme-primer when no theme is named; null switches that off.
+theme: null
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
-show_excerpts: false
-header_pages:
-  - pricing.md
-  - docs.md
-  - support.md
-minima:
-  skin: classic
-  social_links: []
+
+# Launch state (one flag, see README). Before launch every action is the interest
+# email; at the release set launched: true and fill the five values below.
+launched: false
+version: ""
+version_date: ""
+tested_up_to: ""
+wporg_url: ""
+changelog_url: ""
+
 exclude:
   - README.md
   - Gemfile
