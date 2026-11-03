@@ -34,37 +34,37 @@ What each part of Post Quality Manager does: the commands you run from Post Revi
 
 A score on four pillars, Structure, Readability, Engagement and Credibility, and the top edits to make. Its status follows the score: Ready to ship from 71, Needs revision from 41 to 70, Major revision at 40 or below.
 
-{% include screenshot.html src="feature-review" width="1440" height="758" phone="feature-review-phone" phone_width="762" phone_height="758" alt="A post's Review tab in Post Reviews: Needs revision, score 57; bars for Structure, Readability, Engagement and Credibility; three top edits, the first: cut the second anecdote, it delays the first instruction; buttons Open in Editor, Re-run Review and Re-run Rewrite." caption="A post's Review tab in Post Reviews. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-review" width="1440" height="758" alt="A post's Review tab in Post Reviews: Needs revision, score 57; bars for Structure, Readability, Engagement and Credibility; three top edits, the first: cut the second anecdote, it delays the first instruction; buttons Open in Editor, Re-run Review and Re-run Rewrite." caption="A post's Review tab in Post Reviews. Demo posts, fictional scores." %}
 
 ## Takeaways {#takeaways}
 
 The post's main points as a list, ready to insert into the post: three to five specific items, 25 words or fewer each. It also checks the takeaways block the post already has, if any.
 
-{% include screenshot.html src="feature-takeaways" width="1440" height="1082" phone="feature-takeaways-phone" phone_width="762" phone_height="1082" alt="A post's Takeaways tab: Needs revision, score 50; Block found and Position correct fail, the items are within the word limit and specific; one issue, the post has no Key Takeaways block; four rewritten items, the first: give each family member a private vault and share only the logins everyone needs; buttons Insert into Post and Re-run Takeaways." caption="The Takeaways tab, with Insert into Post. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-takeaways" width="1440" height="1082" alt="A post's Takeaways tab: Needs revision, score 50; Block found and Position correct fail, the items are within the word limit and specific; one issue, the post has no Key Takeaways block; four rewritten items, the first: give each family member a private vault and share only the logins everyone needs; buttons Insert into Post and Re-run Takeaways." caption="The Takeaways tab, with Insert into Post. Demo posts, fictional scores." %}
 
 ## Sources {{ pro }} {#sources}
 
 Finds the post's factual claims and checks whether each has a source, needs one or should be worded more cautiously; medical, financial and safety claims count as critical. It suggests sources you can insert at the end of the post.
 
-{% include screenshot.html src="feature-sources" width="1440" height="1428" phone="feature-sources-phone" phone_width="762" phone_height="1428" alt="A post's Sources tab: Needs revision, score 55; 3 claims, 1 sourced, 0 unsourced critical, 1 unsourced moderate, verdict needs sources; two claims without a source, one moderate and one low, each with its issue and a suggestion; three rewritten sources; buttons Insert into Post and Re-run Sources." caption="The Sources tab. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-sources" width="1440" height="1428" alt="A post's Sources tab: Needs revision, score 55; 3 claims, 1 sourced, 0 unsourced critical, 1 unsourced moderate, verdict needs sources; two claims without a source, one moderate and one low, each with its issue and a suggestion; three rewritten sources; buttons Insert into Post and Re-run Sources." caption="The Sources tab. Demo posts, fictional scores." %}
 
 ## SEO {{ pro }} {#seo}
 
 Checks the focus keyphrase and the meta description, and proposes new ones where they are weak or missing: two to four words for the keyphrase, 120 to 156 characters for the description. With Yoast SEO active, it reads the post's current ones first.
 
-{% include screenshot.html src="feature-seo" width="1440" height="914" phone="feature-seo-phone" phone_width="762" phone_height="914" alt="A post's SEO tab: Needs revision, score 55; keyphrase assessment weak, proposed keyphrase family password manager; meta description missing, a proposed one of 142 characters; button Re-run SEO." caption="The SEO tab. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-seo" width="1440" height="914" alt="A post's SEO tab: Needs revision, score 55; keyphrase assessment weak, proposed keyphrase family password manager; meta description missing, a proposed one of 142 characters; button Re-run SEO." caption="The SEO tab. Demo posts, fictional scores." %}
 
 ## Audit {{ pro }} {#audit}
 
 A review, a Takeaways check, a Sources check and an SEO check of the post in one run, scored like Review.
 
-{% include screenshot.html src="feature-audit" width="1440" height="1244" phone="feature-audit-phone" phone_width="762" phone_height="1244" alt="A post's Audit tab: Needs revision, score 58; its review part with bars for the four pillars, overall score 58 and three top edits; its takeaways part with the same checks as Takeaways and one issue." caption="The Audit tab, its review and takeaways parts. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-audit" width="1440" height="1244" alt="A post's Audit tab: Needs revision, score 58; its review part with bars for the four pillars, overall score 58 and three top edits; its takeaways part with the same checks as Takeaways and one issue." caption="The Audit tab, its review and takeaways parts. Demo posts, fictional scores." %}
 
 ## Rewrite {{ pro }} {#rewrite}
 
 Rewrites the post to improve its structure, readability and engagement while keeping its meaning, in line with your Blog Profile and Editorial Standards, and writes a new excerpt. The post is saved with the status Pending Review and the original stays in its revisions; Rewrite needs HTTPS on your site.
 
-{% include screenshot.html src="feature-rewrite" width="1440" height="740" phone="feature-rewrite-phone" phone_width="762" phone_height="740" alt="A post's History tab, newest first: Rewrite applied on November 1, 2026, then Audit 58, SEO 55, Sources 55, Takeaways 50 and Review 57, each Needs revision." caption="A post's History, a Rewrite applied on top. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-rewrite" width="1440" height="740" alt="A post's History tab, newest first: Rewrite applied on November 1, 2026, then Audit 58, SEO 55, Sources 55, Takeaways 50 and Review 57, each Needs revision." caption="A post's History, a Rewrite applied on top. Demo posts, fictional scores." %}
 
 ## Insert into Post {#insert-into-post}
 
@@ -86,13 +86,13 @@ Your plan, and the n8n webhook address and token, which you set on the n8n Workf
 
 The **Default Model** every agent uses, and your **Blog Profile** and **Editorial Standards**: a preset, or your own text under Custom, sent with your commands so reviews and rewrites fit your site. A table shows what each agent sends; a change applies on the next command, with no n8n re-import.
 
-{% include screenshot.html src="feature-ai" width="1440" height="1668" phone="feature-ai-phone" phone_width="772" phone_height="2156" alt="Settings, AI tab: AI Model with the Default Model Claude Sonnet 4.6; AI Prompts & Context with the Agnostic Scoring Framework note and the Blog Profile set to Technical / IT Blog, its preset text shown below." caption="Settings, AI: the model and the Blog Profile. Demo site." %}
+{% include screenshot.html src="feature-ai" width="1440" height="1668" alt="Settings, AI tab: AI Model with the Default Model Claude Sonnet 4.6; AI Prompts & Context with the Agnostic Scoring Framework note and the Blog Profile set to Technical / IT Blog, its preset text shown below." caption="Settings, AI: the model and the Blog Profile. Demo site." %}
 
 ### Agent-Specific Overrides {{ pro }} {#agent-specific-overrides}
 
-For each agent: a different **Model**, its **Reasoning Effort** or **Temperature**, **Additional Instructions** and, for Takeaways and Sources, the **Pattern to use**. Only the controls the selected model supports are shown.
+For each agent: a different **Model**, its **Reasoning Effort** or **Temperature**, **Additional Instructions** and, for Takeaways and Sources, the **Pattern to use**. When the selected model does not support Reasoning Effort or Temperature, that control is turned off, with a note to use the other.
 
-{% include screenshot.html src="feature-overrides" width="1440" height="1428" phone="feature-overrides-phone" phone_width="772" phone_height="1414" alt="Agent-Specific Overrides, the Key Takeaways Agent open: Model Claude Haiku 4.5, Reasoning Effort not available for that model, Temperature 0.2, two sentences of Additional Instructions, Pattern to use set to a pattern named Key takeaways box." caption="Agent-Specific Overrides for the Key Takeaways Agent. Demo site." %}
+{% include screenshot.html src="feature-overrides" width="1440" height="1428" phone="feature-overrides-phone" phone_width="772" phone_height="1414" alt="The Key Takeaways Agent open in Agent-Specific Overrides: Model Claude Haiku 4.5, Reasoning Effort not available for that model, Temperature 0.2, two sentences of Additional Instructions, Pattern to use set to a pattern named Key takeaways box." caption="Agent-Specific Overrides for the Key Takeaways Agent. Demo site." %}
 
 ## Automation {{ pro }} {#automation}
 
@@ -110,4 +110,4 @@ The **Monthly Quota**: how many manual AI actions each Author may run a month, 2
 
 What each WordPress role can do in the plugin: **View reviews**, **Run Review and Key Takeaways**, **Run paid agents**, **Manage agents** and **Manage settings**, applied to every user with that role. Roles that run the whole site, such as Administrator, keep everything, and a role with **Run paid agents** is not subject to the monthly quota.
 
-{% include screenshot.html src="feature-roles" width="1440" height="1014" phone="feature-roles-phone" phone_width="772" phone_height="1550" alt="Settings, Roles tab: a table of roles by View reviews, Run Review and Key Takeaways, Run paid agents, Manage agents and Manage settings; Administrator has every box ticked and locked, Editor all but Manage settings, Author the first two, Contributor View reviews only, Subscriber none." caption="Settings, Roles. Demo site." %}
+{% include screenshot.html src="feature-roles" width="1440" height="1014" alt="Settings, Roles tab: a table of roles by View reviews, Run Review and Key Takeaways, Run paid agents, Manage agents and Manage settings; Administrator has every box ticked and locked, Editor all but Manage settings, Author the first two, Contributor View reviews only, Subscriber none." caption="Settings, Roles. Demo site." %}

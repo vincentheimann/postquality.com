@@ -76,7 +76,7 @@ The guide then runs your first review.
 
 - **Post Reviews** lists every post with its latest score and status. Click Review to score a post, or select several and review them together.
 - **Dashboard** shows the posts to fix next, the average score and the trend.
-- **Insert into Post** puts the suggested Takeaways or Sources into the post with one click, as a plain list or in a pattern you design in Appearance → Patterns.
+- **Insert into Post** puts the suggested Takeaways, or Sources (Pro), into the post with one click, as a plain list or (Pro) in a pattern you design in Appearance → Patterns.
 - **Automated Reviews** (Pro) scores posts on a schedule, by age and score.
 - **Roles** (Pro) sets what each WordPress role can do in the plugin.
 - [Features]({{ "/docs/features/" | relative_url }}) shows every command, Insert into Post and each Settings tab with a picture, and marks what Pro adds.
