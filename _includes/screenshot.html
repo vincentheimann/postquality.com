@@ -4,7 +4,11 @@
   phone (optional: a narrower crop of the same screen shown below 760 px), phone_width, phone_height,
   alt (true of both crops), caption, variant ("hero" for the one strong shadow, else "detail"),
   priority (true for the first-screen picture: fetchpriority high; the others load lazily).
+  A picture without its width and height (or a phone crop without its own) fails the build: the include below names a
+  file that does not exist, so Jekyll stops with its name instead of publishing a page that shifts as it loads.
 {%- endcomment -%}
+{%- unless include.width and include.height -%}{% include ERROR-screenshot-needs-width-and-height %}{%- endunless -%}
+{%- if include.phone -%}{%- unless include.phone_width and include.phone_height -%}{% include ERROR-screenshot-phone-needs-phone_width-and-phone_height %}{%- endunless -%}{%- endif -%}
 {%- assign sh_dir = "/assets/img/" | relative_url -%}
 <figure class="shot shot-{{ include.variant | default: "detail" }}">
   <div class="shot-frame">
