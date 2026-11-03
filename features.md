@@ -34,13 +34,13 @@ What each part of Post Quality Manager does: the commands you run from Post Revi
 
 A score on four pillars, Structure, Readability, Engagement and Credibility, and the top edits to make. Its status follows the score: Ready to ship from 71, Needs revision from 41 to 70, Major revision at 40 or below.
 
-{% include screenshot.html src="feature-review" width="1440" height="758" alt="A post's Review tab in Post Reviews: Needs revision, score 57; bars for Structure, Readability, Engagement and Credibility; three top edits, the first: cut the second anecdote, it delays the first instruction; buttons Open in Editor, Re-run Review and Re-run Rewrite." caption="A post's Review tab in Post Reviews. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-review" width="1440" height="758" alt="A post's Review tab in Post Reviews: Needs revision, score 57; bars for Structure, Readability, Engagement and Credibility; three top edits, the first: cut the second anecdote, it delays the first instruction; buttons Open in Editor, Re-run Review and Re-run Rewrite." caption="A post's Review tab in Post Reviews, on Pro. Demo posts, fictional scores." %}
 
 ## Takeaways {#takeaways}
 
 The post's main points as a list, ready to insert into the post: three to five specific items, 25 words or fewer each. It also checks the takeaways block the post already has, if any.
 
-{% include screenshot.html src="feature-takeaways" width="1440" height="1082" alt="A post's Takeaways tab: Needs revision, score 50; Block found and Position correct fail, the items are within the word limit and specific; one issue, the post has no Key Takeaways block; four rewritten items, the first: give each family member a private vault and share only the logins everyone needs; buttons Insert into Post and Re-run Takeaways." caption="The Takeaways tab, with Insert into Post. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-takeaways" width="1440" height="1082" alt="A post's Takeaways tab: Needs revision, score 50; Block found, Position correct and Count ok fail, the position note reads no Key Takeaways block yet, Count is 0, the items are within the word limit and specific; one issue, the post has no Key Takeaways block; four rewritten items, the first: give each family member a private vault and share only the logins everyone needs; buttons Insert into Post and Re-run Takeaways." caption="The Takeaways tab, with Insert into Post, on Pro. Demo posts, fictional scores." %}
 
 ## Sources {{ pro }} {#sources}
 
@@ -58,11 +58,11 @@ Checks the focus keyphrase and the meta description, and proposes new ones where
 
 A review, a Takeaways check, a Sources check and an SEO check of the post in one run, scored like Review.
 
-{% include screenshot.html src="feature-audit" width="1440" height="1244" alt="A post's Audit tab: Needs revision, score 58; its review part with bars for the four pillars, overall score 58 and three top edits; its takeaways part with the same checks as Takeaways and one issue." caption="The Audit tab, its review and takeaways parts. Demo posts, fictional scores." %}
+{% include screenshot.html src="feature-audit" width="1440" height="1244" alt="A post's Audit tab: Needs revision, score 58; its review part with bars for the four pillars, overall score 58 and three top edits; its takeaways part: Block found, Position correct and Count ok fail, Count is 0, Items are specific passes, and one issue, the post has no Key Takeaways block." caption="The Audit tab, its review and takeaways parts. Demo posts, fictional scores." %}
 
 ## Rewrite {{ pro }} {#rewrite}
 
-Rewrites the post to improve its structure, readability and engagement while keeping its meaning, in line with your Blog Profile and Editorial Standards, and writes a new excerpt. The post is saved with the status Pending Review and the original stays in its revisions; Rewrite needs HTTPS on your site.
+Rewrites the post to improve its structure, readability and engagement while keeping its meaning, in line with your Blog Profile and Editorial Standards, and writes a new excerpt. The post is saved with the status Pending Review and the original stays in its revisions. Rewrite needs Application Passwords on your site; they are usually off when the site does not run on HTTPS.
 
 {% include screenshot.html src="feature-rewrite" width="1440" height="740" alt="A post's History tab, newest first: Rewrite applied on November 1, 2026, then Audit 58, SEO 55, Sources 55, Takeaways 50 and Review 57, each Needs revision." caption="A post's History, a Rewrite applied on top. Demo posts, fictional scores." %}
 
@@ -70,7 +70,7 @@ Rewrites the post to improve its structure, readability and engagement while kee
 
 Puts the suggested takeaways into the post at the top, as a plain list, and replaces any Takeaways inserted earlier. The post is saved right away and keeps its status; the previous version stays in Revisions.
 
-{% include screenshot.html src="feature-insert" width="1516" height="474" phone="feature-insert-phone" phone_width="800" phone_height="590" alt="The Insert Takeaways into the post confirmation: 4 takeaways go into the post at the top, using the pattern chosen in Settings, and replace any Takeaways inserted earlier; the post is saved right away and keeps its status, the previous version stays in Revisions; buttons Cancel and Insert into Post." caption="Insert into Post asks before it saves the post. Demo site." %}
+{% include screenshot.html src="feature-insert" width="1516" height="474" phone="feature-insert-phone" phone_width="800" phone_height="590" alt="The Insert Takeaways into the post confirmation: 4 takeaways go into the post at the top, using the pattern chosen in Settings, and replace any Takeaways inserted earlier; the post is saved right away and keeps its status, the previous version stays in Revisions; buttons Cancel and Insert into Post." caption="Insert into Post asks before it saves the post; with Pro, it uses the pattern chosen in Settings. Demo site." %}
 
 ### Pattern to use {{ pro }} {#pattern-to-use}
 
@@ -78,7 +78,7 @@ Insert into Post also puts the suggested sources at the end of the post, and can
 
 ## Connection {#connection}
 
-Your plan, and the n8n webhook address and token, which you set on the n8n Workflow page. Add a **Notification URL**, such as a chat webhook, and the workflow posts a short report there each time a command finishes.
+Your plan, and the n8n webhook address and token, which live on the n8n Workflow page. Add a **Notification URL**, such as a chat webhook, and the workflow posts a short report there each time a command finishes.
 
 {% include screenshot.html src="feature-connection" width="1440" height="1124" phone="feature-connection-phone" phone_width="772" phone_height="1454" alt="Settings, Connection tab: License, Current plan: Pro, everything unlocked; n8n Connection with a placeholder n8n Webhook URL and a link to the n8n Workflow page for the Webhook Token; an empty Notification URL field." caption="Settings, Connection, on Pro. Demo site." %}
 
@@ -96,7 +96,7 @@ For each agent: a different **Model**, its **Reasoning Effort** or **Temperature
 
 ## Automation {{ pro }} {#automation}
 
-**Automated Reviews (Cron)** runs Review, SEO or Audit daily or weekly on a batch of posts, picked by their latest result from that agent: a score below the **Min Score Threshold**, or older than the **Max Result Age (days)**. Scheduled reviews do not count toward the monthly quota.
+**Automated Reviews (Cron)** runs Review, SEO or Audit daily or weekly on a batch of posts, picked by their latest result from that agent: none yet, a score below the **Min Score Threshold**, or older than the **Max Result Age (days)**. Scheduled reviews do not count toward the monthly quota.
 
 {% include screenshot.html src="feature-automation" width="1440" height="1366" phone="feature-automation-phone" phone_width="772" phone_height="1690" alt="Settings, Automation tab: Automated Reviews (Cron) enabled, Frequency Weekly, Batch Size 5, Command Review, Min Score Threshold 70, Max Result Age 90 days." caption="Settings, Automation. Demo site." %}
 
