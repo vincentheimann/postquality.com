@@ -103,7 +103,7 @@ The guide then runs your first review.
 <details class="faq" id="cost">
 <summary>What does it cost me in AI calls?</summary>
 <div class="faq-a">
-<p>You pay Anthropic per call, on your own API key, and your n8n hosting separately. A review sends the post text plus your settings text once. Measured 24 October 2026 on claude-sonnet-4-6, the default model, at Anthropic's list prices ($3 per million input tokens, $15 per million output tokens): one review costs at most $0.05 for a 600-word, a 1,300-word or a 2,500-word post, about 4 to 5 cents. One review per post per month: 20 posts cost $0.84 to $0.99, 80 posts $3.34 to $3.95. Prices change; check Anthropic's pricing page. The posts measured are fictional.</p>
+<p>You pay Anthropic per call, on your own API key, and your n8n hosting separately. A review sends the post text plus your settings text once. Measured 4 November 2026 on claude-sonnet-5-5, the default model, at Anthropic's list prices ($2 per million input tokens, $10 per million output tokens): one review costs at most $0.03 for a 600-word post and at most $0.04 for a 1,300-word or a 2,500-word post, about 3 to 4 cents. One review per post per month: 20 posts cost $0.58 to $0.72, 80 posts $2.30 to $2.85. Prices change; check Anthropic's pricing page. The posts measured are fictional.</p>
 <p>To cap what you spend, set a spend limit in your Anthropic account: the plugin's Monthly Quota only limits how many AI actions each Author runs (Editors and Administrators have no limit).</p>
 </div>
 </details>
