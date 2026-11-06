@@ -86,7 +86,7 @@ Your plan, and the n8n webhook address and token, which live on the n8n Workflow
 
 The **Default Model** every agent uses, and your **Blog Profile** and **Editorial Standards**: a preset, or your own text under Custom, sent with your commands so reviews and rewrites fit your site. A table shows what each agent sends; a change applies on the next command, with no n8n re-import.
 
-{% include screenshot.html src="feature-ai" width="1440" height="1668" alt="Settings, AI tab: AI Model with the Default Model Claude Sonnet 4.6; AI Prompts & Context with the Agnostic Scoring Framework note and the Blog Profile set to Technical / IT Blog, its preset text shown below." caption="Settings, AI: the model and the Blog Profile. Demo site." %}
+{% include screenshot.html src="feature-ai" width="1440" height="1712" alt="Settings, AI tab: AI Model with the Default Model Claude Sonnet 5.5, best quality/cost balance at $2 / $10 per million tokens; AI Prompts & Context with the Agnostic Scoring Framework note and the Blog Profile set to Technical / IT Blog, its preset text shown below." caption="Settings, AI: the model and the Blog Profile. Demo site." %}
 
 ### Agent-Specific Overrides {{ pro }} {#agent-specific-overrides}
 
