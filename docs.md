@@ -22,7 +22,7 @@ How to set up and use Post Quality Manager, from what it needs to upgrading to P
 
 ## Requirements {#requirements}
 
-- WordPress 6.6 or later and PHP 8.0 or later, on a single site: Multisite is not supported.
+- WordPress 6.6 or later and PHP 8.1 or later, on a single site: Multisite is not supported.
 - Your own n8n, self-hosted, and an Anthropic API key: the workflow runs the reviews on Anthropic's models.
 - Your site and n8n must reach each other over the network: the plugin calls the n8n webhook, and n8n calls your site's REST API back. A local, private or password-protected site cannot be called back.
 - Yoast SEO, optional: its scores enrich the SEO and Audit agents and show on the Post Reviews screen.
