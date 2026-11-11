@@ -41,8 +41,8 @@ Post Quality runs its reviews in an n8n you host yourself, on a server your site
 </div>
 {%- else -%}
 <div class="install">
-<p>Post Quality is not installable yet. One email when it is, then your address is deleted.</p>
-<a class="btn btn-primary-light" href="{% include interest-href.html from="the documentation page" %}"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-mail"/></svg>Tell me when it's available<span class="vh"> (opens your email app)</span></a>
+<a class="btn btn-primary-light" href="{{ site.github_release_url }}" aria-describedby="install-note">Download from GitHub</a>
+<p class="install-note" id="install-note">Opens the latest release on GitHub: download the zip, then upload it in WordPress under Plugins → Add New Plugin → Upload Plugin. Not on WordPress.org yet: <a href="{% include interest-href.html from="the documentation page" %}">one email when it is listed<span class="vh"> (opens your email app)</span></a>, then your address is deleted.</p>
 </div>
 {%- endif %}
 
@@ -85,7 +85,7 @@ The guide then runs your first review.
 
 ## Upgrade to Pro {#upgrade-to-pro}
 
-**Never delete the free plugin first:** deleting removes your stored reviews and settings.{% unless site.launched %} Pro goes on sale with the first public release; these steps apply from then.{% endunless %}
+**Never delete the free plugin first:** deleting removes your stored reviews and settings.{% unless site.launched %} Pro goes on sale with the WordPress.org listing; these steps apply from then.{% endunless %}
 
 1. After checkout, Freemius emails you the license key and a link to the Pro build.
 2. On each site, upload the Pro build with **Plugins → Add New Plugin → Upload Plugin** and activate it. The free build is deactivated for you, and your reviews and settings carry over.

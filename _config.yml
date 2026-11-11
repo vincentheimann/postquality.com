@@ -13,8 +13,10 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
-# Launch state (one flag, see README). Before launch every action is the interest
-# email; at the release set launched: true and fill the five values below.
+# Launch state (one flag, see README). Before launch the free plugin installs from its
+# GitHub release (github_release_url) and Pro is not on sale; on the WordPress.org
+# listing day set launched: true and fill the five values below.
+github_release_url: https://github.com/vincentheimann/post-quality-manager/releases/latest
 launched: false
 version: ""
 version_date: ""
