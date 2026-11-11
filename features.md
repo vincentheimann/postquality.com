@@ -10,7 +10,7 @@ permalink: /docs/features/
 {%- endcomment -%}
 {%- capture pro -%}<a class="chip chip-link" href="{{ "/pricing/#compare-h" | relative_url }}">Pro</a>{%- endcapture %}
 
-What each part of Post Quality Manager does: the commands you run from Post Reviews, Insert into Post, then the Settings tabs. Review and Takeaways stay free; Pro adds every part marked Pro.{% unless site.launched %} Pro goes on sale with the first public release.{% endunless %}
+What each part of Post Quality Manager does: the commands you run from Post Reviews, Insert into Post, then the Settings tabs. Review and Takeaways stay free; Pro adds every part marked Pro.{% unless site.launched %} Pro goes on sale with the WordPress.org listing.{% endunless %}
 
 <nav class="toc" aria-labelledby="toc-title">
 <p class="toc-title" id="toc-title">On this page</p>
